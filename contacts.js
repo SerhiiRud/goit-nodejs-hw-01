@@ -13,7 +13,6 @@ const getContactById = async (contactId) => {
   const contacts = await listContacts();
   const result = contacts.find((contact) => contact.id === contactId);
   return result || null;
-  // ...твій код. Повертає об'єкт контакту з таким id. Повертає null, якщо контакт з таким id не знайдений.
 };
 
 const removeContact = async (contactId) => {
@@ -23,7 +22,6 @@ const removeContact = async (contactId) => {
   const [result] = contacts.splice(index, 1);
   await fs.writeFile(contactsPath, JSON.stringify(contacts, null, 2));
   return result;
-  // ...твій код. Повертає об'єкт видаленого контакту. Повертає null, якщо контакт з таким id не знайдений.
 };
 
 const addContact = async (name, email, phone) => {
@@ -37,7 +35,6 @@ const addContact = async (name, email, phone) => {
   contacts.push(newContact);
   await fs.writeFile(contactsPath, JSON.stringify(contacts, null, 2));
   return newContact;
-  // ...твій код. Повертає об'єкт доданого контакту.
 };
 
 module.exports = {
